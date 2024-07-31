@@ -1,0 +1,14 @@
+.dockerignore
+.eslintignore
+.prettierignore
+.prettierrc.json
+
+Dockerfile
+playwright.config.ts
+README.md
+vitest.config.ts
+
+.nuxt
+node_modules
+test-results
+tests
