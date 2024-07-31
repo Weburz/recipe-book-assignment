@@ -19,3 +19,16 @@ black = "^24.4.2"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.ruff.lint]
+select = [
+	"E", "F", "Q", "W", "D", "I", "N",
+  "UP", "ANN", "ASYNC", "S", "B", "C",
+  "G", "INP", "PIE", "PT", "RET", "ARG",
+  "PTH", "TD", "TRY", "RUF"
+]
+fixable = ["ALL"]
+ignore = ["ANN101", "ANN102"]
+
+[tool.mypy]
+ignore-missing-imports = true
