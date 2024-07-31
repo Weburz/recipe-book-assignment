@@ -31,4 +31,4 @@ fixable = ["ALL"]
 ignore = ["ANN101", "ANN102"]
 
 [tool.mypy]
-ignore-missing-imports = true
+ignore_missing_imports = true
