@@ -1,0 +1,21 @@
+{
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "lint": "nuxt typecheck && eslint",
+    "format": "prettier . --write",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "eslint": "^9.8.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "nuxt": "^3.12.4",
+    "vue": "^3.4.35",
+    "vue-router": "^4.4.0"
+  }
+}
