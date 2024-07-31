@@ -1,0 +1,70 @@
+version: "3"
+
+silent: true
+
+tasks:
+  default:
+    desc: Setup the dev environment and spin up the services
+    cmds:
+      - task: setup
+      - docker compose up
+
+  setup:client:
+    internal: true
+    dir: ./client
+    sources:
+      - package.json
+    generates:
+      - pnpm-lock.yaml
+    cmd: pnpm install --frozen-lockfile
+
+  setup:server:
+    internal: true
+    dir: ./server
+    sources:
+      - pyproject.toml
+    generates:
+      - poetry.lock
+    cmd: poetry install
+
+  setup:
+    desc: Setup the development environment
+    cmds:
+      - task: setup:server
+      - task: setup:client
+      - docker compose build
+
+  lint:client:
+    internal: true
+    dir: ./client
+    cmds:
+      - npm run lint
+      - npm run format --check
+
+  lint:server:
+    internal: true
+    dir: ./server
+    cmds:
+      - ruff check .
+      - mypy .
+
+  lint:
+    desc: Perform some code QA checks on the source code
+    cmds:
+      - task: lint:client
+      - task: lint:server
+
+  test:server:
+    internal: true
+    dir: ./server
+    cmd: pytest
+
+  test:
+    desc: Run the test suite across the source code
+    cmds:
+      - task: test:server
+
+  clean:
+    desc: Clean up the development environment
+    cmds:
+      - docker compose down --remove-orphans
