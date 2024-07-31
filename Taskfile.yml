@@ -67,4 +67,4 @@ tasks:
   clean:
     desc: Clean up the development environment
     cmds:
-      - docker compose down --remove-orphans
+      - docker compose down --remove-orphans --volumes --rmi "all"
