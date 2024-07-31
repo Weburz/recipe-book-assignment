@@ -361,4 +361,7 @@ tags
 .history
 .ionide
 
+### Taskfile ###
+.task
+
 # End of https://www.toptal.com/developers/gitignore/api/python,vim,visualstudiocode,node,nuxtjs
