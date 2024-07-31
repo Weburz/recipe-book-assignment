@@ -1,0 +1,28 @@
+services:
+  server:
+    build:
+      context: ./server
+      target: dev
+    container_name: recipe-book-server
+    image: recipe-book-server:latest
+    ports:
+      - target: 8000
+        published: 8000
+    volumes:
+      - type: bind
+        source: ./server
+        target: /server
+
+  client:
+    build:
+      context: ./client
+      target: dev
+    container_name: recipe-book-client
+    image: recipe-book-client:latest
+    ports:
+      - target: 3000
+        published: 3000
+    volumes:
+      - type: bind
+        source: ./client
+        target: /client
