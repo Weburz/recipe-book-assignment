@@ -1,0 +1,13 @@
+.coverage
+.dockerignore
+.env
+.env_example
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv
+
+__pycache__
+
+Dockerfile
+README.md
