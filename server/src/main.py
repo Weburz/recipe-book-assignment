@@ -5,13 +5,11 @@
 import uvicorn
 from fastapi import FastAPI
 
+from src.routes import root
+
 app = FastAPI()
 
-
-@app.get("/")
-def read_message() -> dict[str, str]:
-    """Return a "Hello World!" JSON message."""
-    return {"message": "Hello World!"}
+app.include_router(root.router)
 
 
 def main() -> None:
