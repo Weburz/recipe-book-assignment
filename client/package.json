@@ -20,6 +20,6 @@
   "dependencies": {
     "nuxt": "^3.12.4",
     "vue": "^3.4.35",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.1"
   }
 }
