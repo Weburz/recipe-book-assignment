@@ -68,3 +68,6 @@ tasks:
     desc: Clean up the development environment
     cmds:
       - docker compose down --remove-orphans --volumes --rmi "all"
+      - sudo rm --recursive --force ./client/.nuxt ./client/node_modules
+      - sudo rm --recursive --force ./server/.venv
+      - sudo rm --recursive --force ./.task
