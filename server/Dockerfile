@@ -1,7 +1,7 @@
 ###############################################################################
 # Base image for generating the requirements file
 ###############################################################################
-FROM python:3.12-slim AS requirements
+FROM python:3.13-slim AS requirements
 
 # Install Poetry for managing the Python dependencies
 RUN python -m pip install pip~=24.0.0 \
@@ -21,7 +21,7 @@ RUN poetry export --output=requirements.txt --only=main
 ###############################################################################
 # Stage for the development runtime of the application
 ###############################################################################
-FROM python:3.12-slim-bookworm AS dev
+FROM python:3.13-slim-bookworm AS dev
 
 RUN apt-get update \
     && apt-get upgrade --yes \
