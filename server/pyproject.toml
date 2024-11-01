@@ -13,7 +13,7 @@ uvicorn = "^0.31.0"
 
 
 [tool.poetry.group.code-quality.dependencies]
-mypy = "^1.11.2"
+mypy = "^1.13.0"
 ruff = "^0.6.8"
 black = "^24.8.0"
 
