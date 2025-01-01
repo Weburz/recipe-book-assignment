@@ -14,7 +14,7 @@ uvicorn = "^0.34.0"
 
 [tool.poetry.group.code-quality.dependencies]
 mypy = "^1.13.0"
-ruff = "^0.8.1"
+ruff = "^0.8.4"
 black = "^24.10.0"
 
 
