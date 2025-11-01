@@ -1,7 +1,7 @@
 ###############################################################################
 # Stage to generate the dependency list
 ###############################################################################
-FROM node:23-bookworm-slim AS dev-dependencies
+FROM node:25-bookworm-slim AS dev-dependencies
 
 # Update the environment and install the "pnpm" package manager
 RUN apt-get update \
@@ -22,7 +22,7 @@ RUN pnpm install
 ###############################################################################
 # Stage to run the development server of the project
 ###############################################################################
-FROM node:23-bookworm-slim AS dev
+FROM node:25-bookworm-slim AS dev
 
 # Update the environment and install the "pnpm" package manager
 RUN apt-get update \
